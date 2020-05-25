@@ -9,6 +9,22 @@ const {
   GraphQLSchema,
 } = graphql;
 
+/*
+const moviesJson = [
+  { "name": "Pulp Fiction", "genre": "Crime", "directorId": "5ecbd011cb39d7f549627fa5" },
+  { "name": "1984", "genre": "Sci-Fi", "directorId": "5ecbd049cb39d7f549632b7a" },
+  { "name": "V for vendetta", "genre": "Sci-Fi-Thriller", "directorId": "5ecbd066cb39d7f549637ef0" },
+  { "name": "Snatch", "genre": "Crime-Comedy", "directorId": "5ecbd07dcb39d7f54963c1b4" },
+  { "name": "Reservoir Dogs", "genre": "Crime", "directorId": "5ecbd011cb39d7f549627fa5" },
+  { "name": "The Hateful Eight", "genre": "Crime", "directorId": "5ecbd011cb39d7f549627fa5" },
+  { "name": "Inglorious Basterds", "genre": "Crime", "directorId": "5ecbd011cb39d7f549627fa5" },
+  {
+    "name": "Lock, Stock and Two Smocking Barrels",
+    "genre": "Crime-Comedy",
+    "directorId": "5ecbd07dcb39d7f54963c1b4",
+  },
+];
+
 const movies = [
   { id: 1, name: "Pulp Fiction", genre: "Crime", directorId: 1 },
   { id: 2, name: "1984", genre: "Sci-Fi", directorId: 2 },
@@ -25,12 +41,20 @@ const movies = [
   },
 ];
 
+const directorsJson = [
+  { "name": "Quentin Tarantino", "age": 55 }, //5ecbd011cb39d7f549627fa5
+  { "name": "Michael Redford", "age": 72 }, //5ecbd049cb39d7f549632b7a
+  { "name": "James McTeigue", "age": 51 }, //5ecbd066cb39d7f549637ef0
+  { "name": "Cuy Richie", "age": 50 }, //5ecbd07dcb39d7f54963c1b4
+];
+
 const directors = [
   { id: 1, name: "Quentin Tarantino", age: 55 },
   { id: 2, name: "Michael Redford", age: 72 },
   { id: 3, name: "James McTeigue", age: 51 },
   { id: 4, name: "Cuy Richie", age: 50 },
 ];
+*/
 
 const MovieType = new GraphQLObjectType({
   name: "Movie",
@@ -41,7 +65,7 @@ const MovieType = new GraphQLObjectType({
     director: {
       type: DirectorType,
       resolve(parent, args) {
-        return directors.find((director) => director.id == parent.directorId);
+        //return directors.find((director) => director.id == parent.directorId);
       },
     },
   }),
